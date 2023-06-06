@@ -148,7 +148,17 @@ class GameFragment : Fragment() {
             binding.textInputEditText.text = null
         }
     }
-
+    /*
+* Skips the current word without changing the score.
+*/
+    private fun onSkipWord() {
+        if (viewModel.nextWord()) {
+            setErrorTextField(false)
+            updateNextWordOnScreen()
+        } else {
+            showFinalScoreDialog()
+        }
+    }
     /*
      * Displays the next scrambled word on screen.
      */
