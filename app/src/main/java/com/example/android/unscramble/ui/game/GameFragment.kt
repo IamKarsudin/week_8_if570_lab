@@ -159,6 +159,11 @@ class GameFragment : Fragment() {
             showFinalScoreDialog()
         }
     }
+    private fun restartGame() {
+        viewModel.reinitializeData()
+        setErrorTextField(false)
+        updateNextWordOnScreen()
+    }
     /*
      * Displays the next scrambled word on screen.
      */
